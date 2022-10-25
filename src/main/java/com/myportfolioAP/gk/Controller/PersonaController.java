@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PersonaController {
     @Autowired IPersonaService ipersonaService;
     
+    
     @GetMapping("personas/traer")
     public List<Persona> getPersona(){
         return ipersonaService.getPersona();
@@ -52,7 +53,7 @@ public class PersonaController {
     ipersonaService.savePersona(persona);
     return persona;
     }
-    
+        
         @GetMapping("/personas/traer/perfil")
         public Persona findPersona(){
                 return ipersonaService.findPersona((long) 1);
