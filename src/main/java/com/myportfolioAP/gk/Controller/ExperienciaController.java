@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("explaboral")
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin
 public class ExperienciaController {
     @Autowired
     ExperienciaService expS;

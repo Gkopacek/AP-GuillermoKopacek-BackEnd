@@ -1,55 +1,33 @@
-package com.myportfolioAP.gk.Entity;
+package com.myportfolioAP.gk.Dto;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 
-
-@Entity
-public class Persona {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
-    @NotNull
-    @Size(min = 3, max = 50, message = "El nombre no cumple con la longitud")
+public class PersonaDto {
+    
+    @NotBlank
     private String nombre;
-    
-    @NotNull
-    @Size(min = 3, max = 50, message = "El nombre de la categoria no cumple con la longitud")
-    private String categoria;
-    
-    @NotNull
-    private String bio;
-    
-    @NotNull
-    @Size(min = 3, max = 50, message = "El apellido no cumple con la longitud")
+    @NotBlank
     private String apellido;
-    
-    
+    @NotBlank
+    private String categoria;
+    @NotBlank
+    private String bio;
+    @NotBlank
     private String img;
 
-    public Persona() {
-    }
-    
-    public Persona(String nombre, String apellido, String categoria, String bio, String img) {
+    public PersonaDto(String nombre, String apellido, String categoria, String bio, String img) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.categoria = categoria;
         this.bio = bio;
         this.img = img;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNombre() {
@@ -58,6 +36,14 @@ public class Persona {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
     public String getCategoria() {
@@ -76,14 +62,6 @@ public class Persona {
         this.bio = bio;
     }
 
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
     public String getImg() {
         return img;
     }
@@ -91,10 +69,7 @@ public class Persona {
     public void setImg(String img) {
         this.img = img;
     }
-    
-    
 
     
-    
-    
+
 }
