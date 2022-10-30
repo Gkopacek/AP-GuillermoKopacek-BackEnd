@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,7 +30,7 @@ public class PersonaController {
          List<Persona> list = pService.list();
          return new ResponseEntity(list, HttpStatus.OK);
     }
-    /*
+    
     @PostMapping("/crear")
     public ResponseEntity<?> create(@RequestBody PersonaDto personaDto){
          if(StringUtils.isBlank(personaDto.getNombre()))
@@ -42,7 +43,7 @@ public class PersonaController {
         
         return new ResponseEntity(new Mensaje("estudio añadido"), HttpStatus.OK);
     }
-    */
+    
     @PutMapping("/modificar/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody PersonaDto personaDto){
         if(!pService.existsById(id)){
