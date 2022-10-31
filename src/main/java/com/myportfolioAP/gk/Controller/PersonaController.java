@@ -12,7 +12,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/personas")
 @CrossOrigin(origins = "https://proyecto-final-ap-7a199.web.app")
+//@CrossOrigin(origins = "http://localhost:4200")
 public class PersonaController {
     @Autowired
     PersonaService pService;
@@ -31,7 +31,7 @@ public class PersonaController {
          return new ResponseEntity(list, HttpStatus.OK);
     }
     
-    @PostMapping("/crear")
+    /*@PostMapping("/crear")
     public ResponseEntity<?> create(@RequestBody PersonaDto personaDto){
          if(StringUtils.isBlank(personaDto.getNombre()))
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
@@ -41,8 +41,8 @@ public class PersonaController {
         Persona persona = new Persona(personaDto.getNombre(), personaDto.getApellido(), personaDto.getCategoria(), personaDto.getBio(), personaDto.getImg());
         pService.save(persona);
         
-        return new ResponseEntity(new Mensaje("estudio añadido"), HttpStatus.OK);
-    }
+        return new ResponseEntity(new Mensaje("persona creada"), HttpStatus.OK);
+    }*/
     
     @PutMapping("/modificar/{id}")
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody PersonaDto personaDto){
@@ -50,7 +50,7 @@ public class PersonaController {
             return new ResponseEntity(new Mensaje("el id no existe"), HttpStatus.BAD_REQUEST);
         }
         if(pService.existsByNombreEst(personaDto.getNombre()) && pService.getByNombreEst(personaDto.getNombre()).get().getId() != id){
-            return new ResponseEntity(new Mensaje("este estudio ya existe"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("el nombre ya existe"), HttpStatus.BAD_REQUEST);
         }
         if(StringUtils.isBlank(personaDto.getNombre()))
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
