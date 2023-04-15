@@ -55,6 +55,7 @@ public class Estudios {
     public void setUrlImg(String urlImg) {
         this.urlImg = urlImg;
     }
+    
 
     
     
