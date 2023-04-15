@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import java.lang.Object;
 
 @RestController
 @CrossOrigin(origins = {"http://localhost:4200", "https://proyecto-final-ap-7a199.web.app"})
@@ -26,7 +25,6 @@ import java.lang.Object;
 public class HardySoftS_Controller {
       @Autowired
       HardySoftS_Service HySS;
-    
       
     @GetMapping("/lista")
     public ResponseEntity<List<HardySoftS>> list(){
@@ -58,10 +56,25 @@ public class HardySoftS_Controller {
             return new ResponseEntity(new Mensaje("esta Skill ya existe"), HttpStatus.BAD_REQUEST);
         }
    
+        if(dtoSkill.getPorcentaje()==101){
+            return new ResponseEntity(new Mensaje("se esperaba un numero entero (0-100)"), HttpStatus.BAD_REQUEST);
+        }
+        
         /*dtoSkill.getPorcentaje();*/
         
+        /*String numeroPrueba = "prueba";*/
         
+        /*dtoSkill.getPorcentaje()*/
         /*!Integer.class.isInstance(Integer.valueOf((porcentaje)))*/
+        
+        
+        
+        
+        System.out.println(!Integer.class.isInstance(dtoSkill.getPorcentaje()));
+        
+        if(!Integer.class.isInstance(dtoSkill.getPorcentaje())){
+            return new ResponseEntity(new Mensaje("se espera un numero entero"),HttpStatus.BAD_REQUEST);
+        }
         
         if(StringUtils.isBlank(dtoSkill.getNombre()))
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
