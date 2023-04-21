@@ -40,6 +40,9 @@ public class HardySoftS_Controller {
         if(HySS.existsByNombre(dtoSkill.getNombre()))
             return new ResponseEntity(new Mensaje("la Skill ya existe"), HttpStatus.BAD_REQUEST);
         
+        if(dtoSkill.getPorcentaje()==101){
+            return new ResponseEntity(new Mensaje("se esperaba un numero entero (0-100)"), HttpStatus.BAD_REQUEST);
+        }
         
          HardySoftS hardYsoft = new HardySoftS(dtoSkill.getNombre(), dtoSkill.getPorcentaje(), dtoSkill.getImg());
         HySS.save(hardYsoft);

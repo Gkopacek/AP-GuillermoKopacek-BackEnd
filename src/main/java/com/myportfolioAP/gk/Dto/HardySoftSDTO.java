@@ -12,35 +12,10 @@ public class HardySoftSDTO {
     @NotBlank
     private String img;
 
-
-
-    /*    public HardySoftSDTO(String nombre, int porcentaje, String img) {
-    this.nombre = nombre;
-    System.out.println("int");
-    this.porcentaje = porcentaje;
-    this.img = img;
-    }*/
     
-    /*   public HardySoftSDTO(String nombre, String porcentaje, String img) {
-    this.nombre = nombre;
-    System.out.println("string");
-    this.porcentaje = Integer.parseInt(porcentaje);
-    this.img = img;
-    }*/
-
-    /*public */
-    
-    /*        public HardySoftSDTO(String nombre, int porcentaje, String img) {
-    this.nombre = nombre;
-    System.out.println("entro al constructor de int");
-    this.porcentaje = porcentaje;
-    this.img = img;
-    }*/
-    
-    public HardySoftSDTO(String nombre, String porcentaje, String img) {
+        public HardySoftSDTO(String nombre, String porcentaje, String img) {
             try {
                 this.nombre = nombre;
-                System.out.println("entro al constructor de String");
                 this.porcentaje = Integer.parseInt(porcentaje);
                 this.img = img;
             } catch (Exception e) {
@@ -49,14 +24,6 @@ public class HardySoftSDTO {
             }       
     }
     
-    /*            public HardySoftSDTO(){
-    System.out.println("entro al constructor por defecto");
-    }
-    
-    public HardySoftSDTO(final HardySoftSDTO hys){
-    System.out.println("entro al constructor del objeto");
-    }
-    */
         
     public String getNombre() {
         return nombre;
