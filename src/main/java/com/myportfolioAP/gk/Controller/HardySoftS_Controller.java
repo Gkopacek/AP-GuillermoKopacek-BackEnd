@@ -59,9 +59,9 @@ public class HardySoftS_Controller {
             return new ResponseEntity(new Mensaje("esta Skill ya existe"), HttpStatus.BAD_REQUEST);
         }
    
-        if(dtoSkill.getPorcentaje()==101){
-            return new ResponseEntity(new Mensaje("se esperaba un numero entero (0-100)"), HttpStatus.BAD_REQUEST);
-        }
+        /*        if(dtoSkill.getPorcentaje()==101){
+        return new ResponseEntity(new Mensaje("se esperaba un numero entero (0-100)"), HttpStatus.BAD_REQUEST);
+        }*/
         
         /*dtoSkill.getPorcentaje();*/
         
