@@ -24,7 +24,6 @@ com\myportfolioAP\gk\Security\Service\UserDetailsImpl.class
 com\myportfolioAP\gk\GkApplication.class
 com\myportfolioAP\gk\Repository\IPersonaRepository.class
 com\myportfolioAP\gk\Security\Controller\Mensaje.class
-.netbeans_automatic_build
 com\myportfolioAP\gk\Controller\PersonaController.class
 com\myportfolioAP\gk\Security\Controller\AuthController.class
 com\myportfolioAP\gk\Repository\IEstudiosRepository.class
