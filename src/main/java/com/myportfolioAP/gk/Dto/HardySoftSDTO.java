@@ -13,13 +13,13 @@ public class HardySoftSDTO {
     private String img;
 
     
-    /*HardySoftSDTO(String nombre, int porcentaje, String img){
+    HardySoftSDTO(String nombre, int porcentaje, String img){
         this.nombre = nombre;
         this.porcentaje = porcentaje;
         this.img = img;
-    }*/
+    }
     
-    public HardySoftSDTO(String nombre, String porcentaje, String img) {
+    /*        public HardySoftSDTO(String nombre, String porcentaje, String img) {
     try {
     this.nombre = nombre;
     this.porcentaje = Integer.parseInt(porcentaje);
@@ -28,7 +28,7 @@ public class HardySoftSDTO {
     System.out.println("error:" + e);
     this.porcentaje = 101;
     }
-    }
+    }*/
     
         
     public String getNombre() {
