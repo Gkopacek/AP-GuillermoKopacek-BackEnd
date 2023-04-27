@@ -20,8 +20,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins = {"http://localhost:4200", "https://proyecto-final-ap-7a199.web.app"})
 @RequestMapping("explaboral")
+@CrossOrigin(origins = "https://proyecto-final-ap-7a199.web.app")
+//@CrossOrigin(origins = "http://localhost:4200")
 public class ExperienciaController {
     @Autowired
     ExperienciaService expS;
@@ -32,7 +33,6 @@ public class ExperienciaController {
         return new ResponseEntity(list, HttpStatus.OK);
     }
     
-    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/crear")
     public ResponseEntity<?> create(@RequestBody ExperienciaDto dtoExpe){
         if(StringUtils.isBlank(dtoExpe.getNombreE()))

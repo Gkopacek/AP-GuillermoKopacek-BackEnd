@@ -12,25 +12,15 @@ public class HardySoftSDTO {
     @NotBlank
     private String img;
 
-    
-    HardySoftSDTO(String nombre, int porcentaje, String img){
+    public HardySoftSDTO() {
+    }
+
+    public HardySoftSDTO(String nombre, int porcentaje, String img) {
         this.nombre = nombre;
         this.porcentaje = porcentaje;
         this.img = img;
     }
-    
-    /*        public HardySoftSDTO(String nombre, String porcentaje, String img) {
-    try {
-    this.nombre = nombre;
-    this.porcentaje = Integer.parseInt(porcentaje);
-    this.img = img;
-    } catch (Exception e) {
-    System.out.println("error:" + e);
-    this.porcentaje = 101;
-    }
-    }*/
-    
-        
+
     public String getNombre() {
         return nombre;
     }

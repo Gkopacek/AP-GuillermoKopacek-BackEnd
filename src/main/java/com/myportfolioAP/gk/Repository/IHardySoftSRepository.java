@@ -10,8 +10,4 @@ import org.springframework.stereotype.Repository;
 public interface IHardySoftSRepository extends JpaRepository<HardySoftS, Integer> {
     public Optional<HardySoftS> findByNombre(String nombre);
     public boolean existsByNombre(String nombre);
-
-    public Optional<HardySoftS> getByPorcentaje(int porcentaje);
-
-    public Optional<HardySoftS> findByPorcentaje(int porcentaje);
 }
